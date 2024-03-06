@@ -12,18 +12,16 @@ public class LabMain {
     private List<Transaction> transactions = DataHelper.loadTransactions();
 
     private void exercise_2_1_printTransactionsWithAmountGreaterThan5000() {
-        transactions.stream()
-                .filter(t -> t.amount().doubleValue() > 5000)
-                .forEach(t -> LinePrinter.print(Color.RED, t.toString()));
+        //transactions.stream()
+                //.filter(?????)
+                //.forEach(????)
         LinePrinter.resetColor();
     }
 
     private void exercise_2_2_convertToStatementLinesAndColorize() {
-        transactions.stream()
-                        .map(t -> t.amount().doubleValue() > 5000
-                                ? transactionToStatementLine(Color.RED, t)
-                                : transactionToStatementLine(Color.GREEN, t))
-                        .forEach(statementLine -> LinePrinter.print(statementLine.color(), statementLine.toString()));
+        //transactions.stream()
+                //.map(????)
+                //.forEach(????);
 
         LinePrinter.resetColor();
     }
@@ -36,8 +34,8 @@ public class LabMain {
 
         LabMain lab = new LabMain();
 
-        //lab.exercise_2_1_printTransactionsWithAmountGreaterThan5000();
-        lab.exercise_2_2_convertToStatementLinesAndColorize();
+        lab.exercise_2_1_printTransactionsWithAmountGreaterThan5000();
+        //lab.exercise_2_2_convertToStatementLinesAndColorize();
 
     }
 }

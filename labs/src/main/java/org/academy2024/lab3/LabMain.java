@@ -18,21 +18,11 @@ public class LabMain {
     private void exercise_3_1_printTopTransactions() {
 
         List<Transaction> transactions = DataHelper.loadTransactions();
-
         int howManyBiggestAmounts = 4;
-        Set<Transaction> biggestTransactions = transactions.stream()
-                .sorted((t1, t2) -> t2.amount().compareTo(t1.amount()))
-                .limit(howManyBiggestAmounts)
-                .collect(Collectors.toSet());
 
-        transactions.stream()
-                .sorted((t1, t2) -> t2.date().compareTo(t1.date()))
-                .forEach( t -> LinePrinter.print(getColor(t, biggestTransactions), t.toString()) );
+        //TODO: Find the biggest transactions
+
         LinePrinter.resetColor();
-    }
-
-    private Color getColor(Transaction transaction, Set<Transaction> biggestTransactions) {
-        return biggestTransactions.contains(transaction) ? Color.RED : Color.GREEN;
     }
 
     public static void main(String[] args) {

@@ -21,7 +21,7 @@ public class LabMain {
     private void exercise_1_2_printTransactionsSorted() {
 
         //TODO: Sort transactions here
-        transactions.sort((t1, t2) -> t1.amount().compareTo(t2.amount()));
+        //transactions.sort(????);
 
         transactions.forEach(t -> LinePrinter.print(Color.GREEN, t.toString()));
         LinePrinter.resetColor();

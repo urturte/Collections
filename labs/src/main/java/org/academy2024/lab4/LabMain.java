@@ -15,14 +15,9 @@ public class LabMain {
         List<Transaction> transactions = DataHelper.loadTransactions();
         List<AccountHolder> accountHolders = DataHelper.loadAccountHolders();
 
-        Map<String, AccountHolder> accountHoldersMap = accountHolders
-                .stream()
-                .collect(HashMap::new, (m, a) -> intoMap(m, a), HashMap::putAll);
+        //TODO: Map ids in transactions to account holders and create statement lines
+        //then print the statement lines
 
-        transactions
-                .stream()
-                .map(t -> new StatementLine(accountHoldersMap.get(t.accountId()).name(), t.accountId(), t.date(), t.amount()))
-                .forEach(statementLine -> LinePrinter.print(Color.GREEN, statementLine.toString()));
         LinePrinter.resetColor();
 
     }
