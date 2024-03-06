@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SetTest {
 
-
     private record PersonRecord(String name, int age) {}
 
     @Test

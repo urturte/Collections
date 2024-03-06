@@ -1,2 +1,3 @@
-rootProject.name = 'lists'
+rootProject.name = 'labs'
+include 'labs'
 
