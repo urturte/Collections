@@ -1,5 +1,6 @@
 package org.academy2024.lab3;
 
+import com.google.common.collect.Sets;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -23,6 +24,23 @@ public class SetTest {
         persons.add(new PersonRecord("John", 25));
 
         assertEquals(3, persons.size());
+    }
+
+    //TODO replace this implementation with your own, using
+    //methods from standard Set interface methods
+    //Make copies, as input objects are readonly, and even they are not
+    //we should not modify them!
+    private <T> Set<T> intersection(Set<T> set1, Set<T> set2) {
+        return Sets.intersection(set1, set2);
+    }
+
+    @Test
+    void testOwnIntersectionIplementation() {
+
+        Set<Integer> set1 = Set.of(1,2,3,4,5);
+        Set<Integer> set2 = Set.of(3,4,5,6,7);
+
+        assertEquals(Set.of(3,4,5), intersection(set1, set2));
     }
 
 }
